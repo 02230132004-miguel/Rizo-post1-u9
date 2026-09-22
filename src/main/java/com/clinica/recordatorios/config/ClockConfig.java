@@ -1,5 +1,6 @@
 package com.clinica.recordatorios.config;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,6 +10,7 @@ import java.time.Clock;
 public class ClockConfig {
 
     @Bean
+    @ConditionalOnMissingBean
     public Clock clock() {
         return Clock.systemDefaultZone();
     }
